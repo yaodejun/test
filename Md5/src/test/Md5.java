@@ -73,10 +73,11 @@ public class Md5 {
 	 */
 	public static String SimpleMd5_3(String passWord,int positiveOrNegative,int length) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 			
+		//创建对象
 	    MessageDigest md = MessageDigest.getInstance("SHA");
-	        
+	    //对字节数组 对象进行更新处理   
 	    md.update(passWord.getBytes());
-	        
+	    //接收字节数组，进行哈希运算，转换位数    
 	    String Md5 = new BigInteger(positiveOrNegative,md.digest()).toString(length);
 	    
 	    return Md5.toUpperCase();
